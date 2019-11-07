@@ -4,14 +4,13 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import {dropdown_icon, comment_icon, file_icon} from '../../resources/icons'
 
+// background-color: ${props => (props.isDragging ? 'rgba(124,123,181,0.2)' : 'white')};
 const Container = styled.div`
   width: 240px;
   min-height: 120px;
   border-radius: 5px;
   background-color: #ffffff;
   margin-bottom: 10px;
-
-  background-color: ${props => (props.isDragging ? 'lightgreen' : 'white')}
 
   display: flex;
   flex-direction: column;
@@ -80,7 +79,7 @@ const FileIcon = styled.img.attrs({
 
 const Task = (props) => {
   return (
-    <Draggable draggableId={props.task.id} index={props.index}>
+    <Draggable draggableId={props.task.task_id} index={props.index}>
       {(provided, snapshot) => (
         <Container
           {...provided.draggableProps}
@@ -93,7 +92,7 @@ const Task = (props) => {
             <TaskDropDownButton/>
           </TaskHeader>
           <TaskContent>
-            {props.task.content}
+            {props.task.note}
           </TaskContent>
           <TaskFooter>
             <CommentIcon/>

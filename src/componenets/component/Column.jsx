@@ -112,7 +112,7 @@ const Column = (props) => {
           {props.column.title}
         </TitleText>
       </TitleArea>
-      <Droppable droppableId={props.column.id}>
+      <Droppable droppableId={props.column.task_id}>
         {(provided, snapshot) => (
           <TaskList
             ref = {provided.innerRef}
@@ -120,7 +120,7 @@ const Column = (props) => {
             isDraggingOver = {snapshot.isDraggingOver}
           >
             {props.tasks.map((task,index) => (
-              <Task key={task.id} task={task} index={index}/>
+              <Task key={task.task_id} task={task} index={index}/>
             ))}
             {provided.placeholder}
           </TaskList>
