@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Draggable } from "react-beautiful-dnd";
 
 const Container = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 2px;
-  padding: 8px;
-  margin-bottom: 8px;
+  width: 260px;
+  min-height: 120px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+
   background-color: ${props => (props.isDragging ? 'lightgreen' : 'white')}
 
   display: flex;
