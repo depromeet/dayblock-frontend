@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import {Droppable} from 'react-beautiful-dnd';
 
-import {todo_icon, urgent_icon, complete_icon, add_button} from '../../resources/icons'
+import {todo_icon, urgent_icon, complete_icon, add_button, trash_icon} from '../../resources/icons'
 import Task from './Task.jsx'
 
 const Container = styled.div`
@@ -22,6 +22,7 @@ const TitleArea = styled.div`
   height: 50px;
   display: flex;
   align-items: center;
+  
 `;
 
 
@@ -32,28 +33,6 @@ const ColumnIcon = styled.img`
   padding-top: 5px;
   padding-right: 8px;
 `;
-
-const ToDoIcon = styled.img.attrs({
-  src: todo_icon
-  })`
-  width: 16px;
-  height: 16px;
-`;
-
-const UrgentIcon = styled.img.attrs({
-  src: urgent_icon
-  })`
-  width: 16px;
-  height: 16px;
-`;
-
-const CompleteIcon = styled.img.attrs({
-  src: complete_icon
-  })`
-  width: 16px;
-  height: 16px;
-`;
-
 
 const TitleText = styled.div`
   font-weight: bold;
@@ -75,8 +54,7 @@ const AddTaskButtonArea = styled.div`
   display: flex;
   justify-content: center;
   height: 60px;
-  
-`
+`;
 
 const AddClickArea = styled.div`
   display: flex;
@@ -115,14 +93,14 @@ const AddButton = styled.img.attrs({
 
 const Column = (props) => {
   const getColumnIconSource = (columnTitle) => {
-  if(columnTitle === 'To Do') {
-    return todo_icon;
-  } else if (columnTitle === 'Urgent') {
-    return urgent_icon;
-  } else {
-    return complete_icon;
-  }
-  }
+    if(columnTitle === 'To Do') {
+      return todo_icon;
+    } else if (columnTitle === 'Urgent') {
+      return urgent_icon;
+    } else {
+      return complete_icon;
+    }
+  };
 
   return (
     <Container>

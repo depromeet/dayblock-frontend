@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
 
-import {dropdown_icon} from '../../resources/icons'
+import {dropdown_icon, comment_icon, file_icon} from '../../resources/icons'
 
 const Container = styled.div`
   width: 240px;
@@ -52,8 +52,31 @@ const TaskDropDownButton = styled.img.attrs({
 const TaskContent = styled.div`
   font-size: 13px;
   word-break:break-all;
+  color: #2E2E2E;
+  min-height: 60px;
+  margin-bottom: 5px;
 `;
 
+const TaskFooter = styled.div`
+  height: 25px;
+  display: flex;
+  align-items: center;
+`;
+
+const CommentIcon = styled.img.attrs({
+  src: comment_icon
+})`
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+`;
+
+const FileIcon = styled.img.attrs({
+  src: file_icon
+})`
+  width: 15px;
+  height: 15px;
+`;
 
 const Task = (props) => {
   return (
@@ -72,7 +95,10 @@ const Task = (props) => {
           <TaskContent>
             {props.task.content}
           </TaskContent>
-
+          <TaskFooter>
+            <CommentIcon/>
+            <FileIcon/>
+          </TaskFooter>
         </Container>
       )}
     </Draggable>
