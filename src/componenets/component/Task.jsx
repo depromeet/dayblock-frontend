@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from 'react-beautiful-dnd';
+
+import {dropdown_icon} from '../../resources/icons'
 
 const Container = styled.div`
-  width: 260px;
+  width: 240px;
   min-height: 120px;
   border-radius: 5px;
   background-color: #ffffff;
@@ -12,7 +14,39 @@ const Container = styled.div`
   background-color: ${props => (props.isDragging ? 'lightgreen' : 'white')}
 
   display: flex;
+  flex-direction: column;
+  padding: 10px;
 `;
+
+const TaskHeader = styled.div`
+  height: 25px;
+  display: flex;
+  
+  position: relative;
+  margin-bottom: 5px;
+`;
+
+const TaskTitle = styled.div`
+  font-size: 17px;
+  font-weight: 500;
+`;
+
+const TaskDropDownButton = styled.img.attrs({
+  src: dropdown_icon
+  })`
+  width: 16px;
+  height: 16px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 4px;
+`;
+
+const TaskContent = styled.div`
+  font-size: 13px;
+`;
+
 
 const Task = (props) => {
   return (
@@ -24,7 +58,14 @@ const Task = (props) => {
           ref={provided.innerRef}
           isDragging={snapshot.isDragging}
         >
-          {props.task.content}
+          <TaskHeader>
+            <TaskTitle>{props.task.title}</TaskTitle>
+            <TaskDropDownButton/>
+          </TaskHeader>
+          <TaskContent>
+            {props.task.content}
+          </TaskContent>
+
         </Container>
       )}
     </Draggable>

@@ -2,18 +2,22 @@ const initialData = {
   tasks : {
     'task1': {
       id: 'task1',
+      title: 'Task1 Title',
       content: 'Task1 Content'
     },
     'task2': {
       id: 'task2',
+      title: 'Task2 Title',
       content: 'Task2 Content'
     },
     'task3': {
       id: 'task3',
+      title: 'Task3 Title',
       content: 'Task3 Content'
     },
     'task4': {
       id: 'task4',
+      title: 'Task4 Title',
       content: 'Task4 Content'
     }
   },
