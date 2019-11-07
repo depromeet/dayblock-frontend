@@ -29,6 +29,12 @@ const TaskHeader = styled.div`
 const TaskTitle = styled.div`
   font-size: 17px;
   font-weight: 500;
+  
+  width: 220px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap:break-word;
 `;
 
 const TaskDropDownButton = styled.img.attrs({
@@ -45,6 +51,7 @@ const TaskDropDownButton = styled.img.attrs({
 
 const TaskContent = styled.div`
   font-size: 13px;
+  word-break:break-all;
 `;
 
 
