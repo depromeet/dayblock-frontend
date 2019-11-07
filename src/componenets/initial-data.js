@@ -31,7 +31,7 @@ const initialData = {
     },
     'column2': {
       id: 'column2',
-      title: 'Emergency',
+      title: 'Urgent',
       taskIds: []
     },
     'column3': {

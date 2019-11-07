@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
-import {Droppable} from "react-beautiful-dnd";
+import {Droppable} from 'react-beautiful-dnd';
 
+import {todo_icon, urgent_icon, complete_icon, add_button} from '../../resources/icons'
 import Task from './Task.jsx'
 
 const Container = styled.div`
@@ -23,13 +24,43 @@ const TitleArea = styled.div`
   align-items: center;
 `;
 
+
+const ColumnIcon = styled.img`
+  width: 18px;
+  height: 18px;
+  padding-left: 14px;
+  padding-top: 5px;
+  padding-right: 8px;
+`;
+
+const ToDoIcon = styled.img.attrs({
+  src: todo_icon
+  })`
+  width: 16px;
+  height: 16px;
+`;
+
+const UrgentIcon = styled.img.attrs({
+  src: urgent_icon
+  })`
+  width: 16px;
+  height: 16px;
+`;
+
+const CompleteIcon = styled.img.attrs({
+  src: complete_icon
+  })`
+  width: 16px;
+  height: 16px;
+`;
+
+
 const TitleText = styled.div`
   font-weight: bold;
   color: #000000;
-  padding-left: 14px;
   font-size: 20px;
   padding-top: 5px;
-`
+`;
 
 // background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')}
 const TaskList = styled.div`
@@ -47,25 +78,58 @@ const AddTaskButtonArea = styled.div`
   
 `
 
+const AddClickArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+`
+
 const AddTaskText = styled.div`
   color: #32325d;
   font-size: 16px;
   opacity: 0.4;
-  margin-right: 12px;
+  margin-right: 8px;
   padding-top: 10px;
 `
 
-const AddButton = styled.img`
-  width: 16px;
-  height: 16px;
-  opacity: 0.4;
+const AddButton = styled.img.attrs({
+  src: add_button
+  })`
+  width: 21px;
+  height: 21px;
   padding-top: 10px;
+  opacity: 0.85;
 `
+
+// {(props) => {
+//   console.log(props.column.title);
+//
+//   if(props.column.title === 'To Do') {
+//     return <ToDoIcon/>
+//   } else if (props.column.title === 'Urgent') {
+//     return <UrgentIcon/>
+//   } else {
+//     return <CompleteIcon/>
+//   }
+// }}
 
 const Column = (props) => {
+  const getColumnIconSource = (columnTitle) => {
+  if(columnTitle === 'To Do') {
+    return todo_icon;
+  } else if (columnTitle === 'Urgent') {
+    return urgent_icon;
+  } else {
+    return complete_icon;
+  }
+  }
+
   return (
     <Container>
       <TitleArea>
+        <ColumnIcon
+          src={getColumnIconSource(props.column.title)}
+        />
         <TitleText>
           {props.column.title}
         </TitleText>
@@ -86,8 +150,10 @@ const Column = (props) => {
       </Droppable>
 
       <AddTaskButtonArea>
-        <AddTaskText>Add Task</AddTaskText>
-        <AddButton/>
+        <AddClickArea>
+          <AddTaskText>Add Task</AddTaskText>
+          <AddButton/>
+        </AddClickArea>
       </AddTaskButtonArea>
     </Container>
   )
