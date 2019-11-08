@@ -13,11 +13,13 @@ const Header = () => {
 
     Axios.get(`${SERVER_URL}/api/profile`)
     .then((res) => {
-      console.log(res)
       if(res.status === 200) {
         setUserInfo(res.data);
-        console.log(userInfo)
       }
+    })
+    .catch(error => {
+      console.error(error);
+      localStorage.removeItem("token");
     })
   }, []);
 

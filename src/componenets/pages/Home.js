@@ -1,16 +1,10 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import "../../interceptor/headerInterceptor";
-import { Header } from "../layout";
+import MainTemplate from "../templates/MainTemplate";
 
 const Home = () => {
-  const isLogined = !!localStorage.getItem("token");
+  const body = (<main>테스트</main>)
   return (
-    <React.Fragment>
-      {!isLogined && <Redirect to="/login" />}
-      <Header/>
-      <div>router test</div>
-    </React.Fragment>
+    <MainTemplate body={body}/>
   );
 };
 
