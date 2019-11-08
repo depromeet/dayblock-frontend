@@ -38,7 +38,7 @@ const Home = () => {
 
     let newState = {}; // 업데이트할 상태값
 
-    if(sourceColumn.id === destinationColumn.id) {
+    if(sourceColumn.column_id === destinationColumn.column_id) {
       const newTaskIds = Array.from(sourceColumn.taskIds);
 
       newTaskIds.splice(source.index, 1);
@@ -53,7 +53,7 @@ const Home = () => {
         ...blockData,
         columns: {
           ...blockData.columns,
-          [newColumn.task_id] : newColumn,
+          [newColumn.column_id] : newColumn,
         }
       };
 
@@ -77,15 +77,15 @@ const Home = () => {
         ...blockData,
         columns: {
           ...blockData.columns,
-          [newSourceColumn.id] : newSourceColumn,
-          [newDestinationColumn.id] : newDestinationColumn,
+          [newSourceColumn.column_id] : newSourceColumn,
+          [newDestinationColumn.column_id] : newDestinationColumn,
         }
       };
     }
 
 
     // const [blockData, setBlockData] = useState(initialData);
-
+    console.log(newState)
     setBlockData(newState);
   }, []);
 
@@ -99,7 +99,7 @@ const Home = () => {
           const column = blockData.columns[columnId];
           const tasks = column.taskIds.map(taskId => blockData.tasks[taskId]);
 
-          return <Column key={column.task_id} column={column} tasks={tasks} />
+          return <Column key={column.column_id} column={column} tasks={tasks} />
         })}
       </Container>
     </DragDropContext>

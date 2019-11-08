@@ -112,7 +112,7 @@ const Column = (props) => {
           {props.column.title}
         </TitleText>
       </TitleArea>
-      <Droppable droppableId={props.column.task_id}>
+      <Droppable droppableId={props.column.column_id}>
         {(provided, snapshot) => (
           <TaskList
             ref = {provided.innerRef}

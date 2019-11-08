@@ -33,17 +33,17 @@ const initialData = {
   },
   columns: {
     'column1': {
-      task_id: 'column1',
+      column_id: 'column1',
       title: 'To Do',
       taskIds: ['task1','task5','task6']
     },
     'column2': {
-      task_id: 'column2',
+      column_id: 'column2',
       title: 'Urgent',
       taskIds: ['task3','task4']
     },
     'column3': {
-      task_id: 'column3',
+      column_id: 'column3',
       title: 'Complete',
       taskIds: ['task2']
     }
