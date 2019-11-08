@@ -1,3 +1,10 @@
 /* header */
-.header{background: #fff;height: 68px;padding: 16px 0 16px 22px;border-bottom:1px solid #e6e6e6}
+.header{
+    display: flex;
+    padding-left: 22px;
+    height: 68px;
+    background: #fff;
+    border-bottom:1px solid #e6e6e6;
+    align-items: center;
+}
 .header-logo{background: url(./assets/ico-logo@2x.png) no-repeat;background-size: 163px 36px;width: 163px;height: 36px;}

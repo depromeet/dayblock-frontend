@@ -1,5 +1,5 @@
 /* navigation */
-.nav{background:#fff;width:80px;float:left;padding-top:140px;height:1024px}
+.nav{background:#fff;width:80px;float:left;padding-top:140px;}
 .nav-item{width:80px;height:80px;padding:30px}
 .nav-item:hover{background:#f0f1f6;}
 .nav-item-icon{width:20px;height:20px}
