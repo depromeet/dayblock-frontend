@@ -1,0 +1,108 @@
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+ul,
+li {
+  list-style: none;
+}
+.slide {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  ul {
+    width: calc(100% * 4);
+    height: 100%;
+    display: flex;
+    transition: 1s;
+  }
+
+  li {
+    width: calc(100% / 4);
+    height: 100%;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        background: url("../../images/login/intro#{$i}.png") no-repeat center center fixed;
+        background-size: cover;
+      }
+      .box-#{$i} {
+        width: 2em * $i;
+      }
+    }
+  }
+  input[name="pos"] {
+    display: none;
+  }
+
+  .login-btn {
+    width: 264px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffc600;
+    border: none;
+    position: absolute;
+    bottom: 176px;
+    left: 42%;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .bullet {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .bullet label {
+    width: 16px;
+    height: 16px;
+    margin: 8px;
+    border-radius: 32px;
+    display: inline-block;
+    background: #fff;
+    font-size: 0;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  /* 슬라이드 조작 */
+  #pos1:checked ~ ul {
+    margin-left: 0;
+  }
+  #pos2:checked ~ ul {
+    margin-left: -100%;
+  }
+  #pos3:checked ~ ul {
+    margin-left: -200%;
+  }
+  #pos4:checked ~ ul {
+    margin-left: -300%;
+  }
+  /* bullet 조작 */
+  #pos1:checked ~ .bullet label:nth-child(1),
+  #pos2:checked ~ .bullet label:nth-child(2),
+  #pos3:checked ~ .bullet label:nth-child(3),
+  #pos4:checked ~ .bullet label:nth-child(4) {
+    background-color: #ffc600;
+  }
+}
