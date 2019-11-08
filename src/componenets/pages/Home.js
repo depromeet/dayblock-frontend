@@ -85,9 +85,9 @@ const Home = () => {
 
 
     // const [blockData, setBlockData] = useState(initialData);
-    console.log(newState)
+    console.log(newState);
     setBlockData(newState);
-  }, []);
+  }, [blockData]);
 
   return (
     <DragDropContext
