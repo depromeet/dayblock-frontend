@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../resources/sass/login/Login.scss";
-import prev from "../../resources/images/login/icon-back.svg";
-import next from "../../resources/images/login/icon-next.svg";
+import { LoginModal } from "../molecules";
 // import prev from "../../resources/images/login/icon-back.svg";
 // import next from "../../resources/images/login/icon-next.svg";
 
 const Login = () => {
+  const onLoginButtonClick = () => {
+    setVisible(!visible);
+  };
+  const [visible, setVisible] = useState(false);
   return (
     <div className="slide">
+      {visible ? <LoginModal setVisible={setVisible} /> : ""}
       <input type="radio" name="pos" id="pos1" defaultChecked />
       <input type="radio" name="pos" id="pos2" />
       <input type="radio" name="pos" id="pos3" />
@@ -19,7 +23,9 @@ const Login = () => {
         <li></li>
       </ul>
       <div className="center">
-        <button className="login-btn">Get Started</button>
+        <button className="login-btn" onClick={onLoginButtonClick}>
+          Get Started
+        </button>
       </div>
       <p className="bullet center">
         {/* <img src={prev} alt={prev} /> */}
