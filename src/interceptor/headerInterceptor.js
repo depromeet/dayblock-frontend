@@ -4,7 +4,7 @@ import Axios from "axios";
 
 Axios.interceptors.request.use(
   function(config) {
-    config.headers.authorization = localStorage.getItem("token");
+    config.headers.authorization = `Bearer ${localStorage.getItem("token")}`;
     return config;
   },
   function(error) {

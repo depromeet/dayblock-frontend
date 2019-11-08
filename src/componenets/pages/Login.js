@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { LoginModal } from "../molecules";
 import "../../resources/sass/login/Login.scss";
-import { Nav, Header } from "../layout";
+import {Header } from "../layout";
 
 const Login = () => {
   const isLogined = !!localStorage.getItem("token");
@@ -13,7 +13,6 @@ const Login = () => {
   return (
     <React.Fragment>
       <Header />
-      <Nav />
       {isLogined && <Redirect to="/" />}
       <div className="slide">
         {visible ? <LoginModal setVisible={setVisible} /> : ""}

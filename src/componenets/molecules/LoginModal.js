@@ -14,6 +14,11 @@ const LoginModal = props => {
     setVisible(false);
   };
 
+  const onkeypressEnter = (e) => {
+    if(e.key === 'Enter'){
+     login();
+    }
+  }
   const login = () => {
     console.log(email, password);
     Axios({
@@ -58,6 +63,7 @@ const LoginModal = props => {
             onChange={e => {
               setPassword(e.target.value);
             }}
+            onKeyPress={onkeypressEnter}
           ></input>
           <p className="right clickable">Forget your password?</p>
           <div>
