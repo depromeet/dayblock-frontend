@@ -15,7 +15,7 @@ li {
   list-style: none;
 }
 .slide {
-  height: 100%;
+  height: calc(100% - 68px);
   overflow: hidden;
   position: relative;
 
@@ -32,7 +32,7 @@ li {
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
-        background: url("../../images/login/intro#{$i}.png") no-repeat center center fixed;
+        background: url("../../images/login/intro#{$i}.png") no-repeat center center;
         background-size: cover;
       }
       .box-#{$i} {
