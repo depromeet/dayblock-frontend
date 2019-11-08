@@ -1,0 +1,16 @@
+/* header */
+.header{
+    display: flex;
+    padding: 0 22px;
+    height: 68px;
+    background: #fff;
+    border-bottom:1px solid #e6e6e6;
+    align-items: center;
+}
+.header-logo{
+    flex-grow: 3;
+    background: url(./assets/ico-logo@2x.png) no-repeat;
+    background-size: 163px 36px;
+    width: 163px;
+    height: 36px;
+}
