@@ -14,15 +14,10 @@ const Container = styled.div`
 const Home = () => {
   const [blockData, setBlockData] = useState(initialData);
 
-  // const onDragStart = useCallback((result) => {
-  //   console.log('onDragStart');
-  // }, []);
-  //
-  // const onDragUpdate = useCallback((result) => {
-  // }, []);
+  React.useEffect(() => console.log('blockData',blockData));
 
   const onDragEnd = useCallback((result) => {
-    console.log('onDragEnd');
+    console.log('onDragEnd 시작할 때 blockData',blockData);
 
     const { destination, source, draggableId } = result;
 
@@ -30,95 +25,74 @@ const Home = () => {
       return;
     }
 
-    // 같은 위치에 드롭한 경우 > 아무일 할 필요 없음
-    if(destination.droppableId === source.droppableId
-      && destination.index === source.index
-    ) return;
+    if(
+      source.droppableId === destination.droppableId
+      &&  source.index === destination.index
+    ) {
+      return;
+    }
 
     const sourceColumn = blockData.columns[source.droppableId];
     const destinationColumn = blockData.columns[destination.droppableId];
 
-    let newState = {};
-    if(sourceColumn.task_id === destinationColumn.task_id) {
-      newState = updateSameColumn(source, destination, draggableId);
+
+    let newState = {}; // 업데이트할 상태값
+
+    if(sourceColumn.id === destinationColumn.id) {
+      const newTaskIds = Array.from(sourceColumn.taskIds);
+
+      newTaskIds.splice(source.index, 1);
+      newTaskIds.splice(destination.index, 0, draggableId);
+
+      const newColumn = {
+        ...sourceColumn,
+        taskIds: newTaskIds
+      };
+
+      newState = {
+        ...blockData,
+        columns: {
+          ...blockData.columns,
+          [newColumn.task_id] : newColumn,
+        }
+      };
+
     }
     else {
-      newState = updateDifferentColumn(source, destination, draggableId);
+      const sourceTaskIds = Array.from(sourceColumn.taskIds);
+      sourceTaskIds.splice(source.index, 1);
+      const newSourceColumn = {
+        ...sourceColumn,
+        taskIds: sourceTaskIds
+      };
+
+      const destinationTaskIds = Array.from(destinationColumn.taskIds);
+      destinationTaskIds.splice(destination.index, 0, draggableId);
+      const newDestinationColumn = {
+        ...destinationColumn,
+        taskIds: destinationTaskIds
+      };
+
+      newState = {
+        ...blockData,
+        columns: {
+          ...blockData.columns,
+          [newSourceColumn.id] : newSourceColumn,
+          [newDestinationColumn.id] : newDestinationColumn,
+        }
+      };
     }
 
-    setBlockData(newState)
+
+    // const [blockData, setBlockData] = useState(initialData);
+
+    setBlockData(newState);
   }, []);
-
-  const updateSameColumn = (source, destination, draggableId) => {
-    const sourceColumn = blockData.columns[source.droppableId];
-
-    const newTaskIds = Array.from(sourceColumn.taskIds);
-    // const newTaskIds = column.taskIds; 이건 왜안될까....
-
-    newTaskIds.splice(source.index, 1); // 움직인 task 제거
-    // 제거없이 destination.index 위치에 draggableId 추가
-    newTaskIds.splice(destination.index, 0, draggableId);
-
-    console.log('sourceColumn',sourceColumn);
-    console.log('newTaskIds',newTaskIds);
-
-    const newColumn = {
-      ...sourceColumn,
-      taskIds: newTaskIds
-    };
-
-    console.log('newColumn',newColumn);
-
-    // 변경사항만 오버라이딩
-    const newState = {
-      ...blockData,
-      columns: {
-        ...blockData.columns,
-        [newColumn.task_id] : newColumn,
-      }
-    };
-
-    console.log('newState',newState);
-
-    return newState;
-  };
-
-  const updateDifferentColumn = (source, destination, draggableId) => {
-    const sourceColumn = blockData.columns[source.droppableId];
-    const destinationColumn = blockData.columns[destination.droppableId];
-
-    const sourceTaskIds = Array.from(sourceColumn.taskIds);
-    sourceTaskIds.splice(source.index, 1);
-    const newSourceColumn = {
-      ...sourceColumn,
-      taskIds: sourceTaskIds
-    };
-
-    const destinationTaskIds = Array.from(destinationColumn.taskIds);
-    destinationTaskIds.splice(destination.index, 0, draggableId);
-    const newDestinationColumn = {
-      ...destinationColumn,
-      taskIds: destinationTaskIds
-    };
-
-    const newState = {
-      ...blockData,
-      columns: {
-        ...blockData.columns,
-        [newSourceColumn.task_id] : newSourceColumn,
-        [newDestinationColumn.task_id] : newDestinationColumn,
-      }
-    };
-
-    console.log('newState',newState);
-
-
-    return newState;
-  };
 
   return (
     <DragDropContext
       onDragEnd = {onDragEnd}
+
     >
       <Container>
         {blockData.columnOrder.map(columnId => {
