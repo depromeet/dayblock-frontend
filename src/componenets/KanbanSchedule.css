@@ -1,0 +1,10 @@
+/* main */
+.main{background: #F0F1F6;float:left;width:calc(100% - 80px);height:1024px;padding:40px;display:grid;grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+  "header header header header"
+  "schedule todo urgency completed"}
+.main-info{margin-bottom:40px;grid-area: header;}
+.schedule-info{display:inline-block;background: #000;color:#fff;border-radius:6px;width:48px;height:48px;text-align: center;padding: 14px 18px;margin-right:24px;font-size:20px}
+.schedule-select{width:280px;height:48px;background:transparent;font-size:15px;font-weight:bold}
+.main section{background:#f8f9fb;border-radius:8px;box-shadow: 0 0 10px 0 #d2d7e0;display:inline-block;width:280px;margin:8px;margin-left:0}

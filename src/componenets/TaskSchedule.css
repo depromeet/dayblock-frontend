@@ -1,0 +1,8 @@
+.task{border-radius: 6px;position:relative;left:90px;right:0;margin:7px 10px; width:170px;z-index:998;overflow:hidden;color:#fff}
+.task.completed{background-image: linear-gradient(322deg, #81d5ee, #7ed492 -34%)}
+.task.urgency{background-image: linear-gradient(135deg, #c781ff -18%, #e57373 125%)}
+.task.todo{background-image: linear-gradient(159deg, #9ea7fc, #65b6f7 114%)}
+.task-header{width: 170px;height: 24px;border-top-left-radius: 6px;border-top-right-radius:6px;background-color: rgba(0, 0, 0, 0.1);padding:4px 10px 4px 10px;vertical-align:middle;line-height:18px;font-size:11px;}
+.task-body{padding:6px 10px;font-size:13px}
+.top{position: absolute;top:0;width:100%;height:5px;cursor:row-resize}
+.bottom{left: 13px;position: absolute;bottom: 0;width:100%;height: 5px;cursor: row-resize;}
