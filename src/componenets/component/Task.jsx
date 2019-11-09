@@ -15,6 +15,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-left: 10px;
 `;
 
 const TaskHeader = styled.div`
