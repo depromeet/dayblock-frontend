@@ -4,6 +4,7 @@ header, body, #root {
 main {
     background: #f0f1f6;
     height: calc(100% - 68px);
+    overflow-y: auto;
 }
 ul{padding:0;margin:0}
 li {list-style: none;padding:0}

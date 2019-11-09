@@ -1,5 +1,5 @@
 /* main */
-.main{background: #F0F1F6;float:left;width:calc(100% - 80px);height:1024px;padding:40px;display:grid;grid-template-rows: repeat(2, 1fr);
+.main{background: #F0F1F6;float:left;width:calc(100% - 80px);padding:40px;display:grid;grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
   "header header header header"
