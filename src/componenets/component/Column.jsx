@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import {Droppable} from 'react-beautiful-dnd';
 
-import {todo_icon, urgent_icon, complete_icon, add_button, trash_icon} from '../../resources/icons'
+import {todo_icon, urgent_icon, complete_icon, add_button} from '../../resources/icons'
 import Task from './Task.jsx'
 
 const Container = styled.div`
@@ -26,7 +26,9 @@ const TitleArea = styled.div`
 `;
 
 
-const ColumnIcon = styled.img`
+const ColumnIcon = styled.img.attrs({
+  src: todo_icon
+  })` 
   width: 18px;
   height: 18px;
   padding-left: 14px;
@@ -75,21 +77,10 @@ const AddButton = styled.img.attrs({
   })`
   width: 21px;
   height: 21px;
-  padding-top: 10px;
+  margin-top: 5px;
   opacity: 0.85;
-`
+`;
 
-// {(props) => {
-//   console.log(props.column.title);
-//
-//   if(props.column.title === 'To Do') {
-//     return <ToDoIcon/>
-//   } else if (props.column.title === 'Urgent') {
-//     return <UrgentIcon/>
-//   } else {
-//     return <CompleteIcon/>
-//   }
-// }}
 
 const Column = (props) => {
   const getColumnIconSource = (columnTitle) => {
