@@ -1,9 +1,20 @@
 /* schedule */
 .schedule-container{position:relative;height:870px;grid-area: schedule;}
-.schedule-back{display:grid;grid-template-rows:repeat(19,1fr);grid-template-columns:repeat(1,1fr);position:absolute;top:0;bottom:0;right:0;left:0;}
+.schedule-back{display:grid;grid-template-rows:repeat(20,1fr);grid-template-columns:repeat(1,1fr);position:absolute;top:0;bottom:0;right:0;left:0;}
 .schedule-time{background:#fff;position:relative;padding-right:15px;width:90px;text-align:right;color:#9cb2cd;font-weight:bold}
 .schedule-time.first{border-top-left-radius: 8px;}
 .schedule-time.last{border-bottom-left-radius: 8px;}
 .schedule-time:after{content:'';position:absolute;bottom:0;left:0;width:280px;background:transparent;height:1px;background:#eee;z-index:995}
 .timeline{position:absolute;top:0;width:280px;background:transparent;height:10px;z-index:999}
 .timeline.top-line{top:0}
+
+.schedule-date {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+}

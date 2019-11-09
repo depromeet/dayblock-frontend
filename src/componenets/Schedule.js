@@ -19,7 +19,20 @@ const Schedule = () => {
 
   const dateTable = () =>{
     let times = timePosition.map((time,index)=>{
-      if(!time){return}
+      if(!time){
+        const style = {
+          textAlign: "center",
+        }
+        const today = new Date();
+        const year  = today.getFullYear(); 
+        const month  = today.getMonth() + 1; 
+        const day  = `${today.getDate()}`.padStart(2, '0'); 
+        return (
+          <div key={index} style={style} className="schedule-date">
+              {`${year} - ${month} - ${day}`}
+          </div>
+        )
+      }
       else{
         return (
           <div key={index} className={`schedule-time ${index === 1 ? "first" : "" } ${(index === timePosition.length -1) ? "last" : ""}`}>
@@ -38,7 +51,7 @@ const Schedule = () => {
     // api 통신
     const taskId = parseInt(startId);
     const data = tasks.filter(task=>task.id===taskId)
-    const URL = `dev.ryulth.com:14141`
+    const URL = "http://dev.ryulth.com:14141";
     const API = `/api/block/update/time`;
     const payLoad ={
       "endTime": data.endTime,
