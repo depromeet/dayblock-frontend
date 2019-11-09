@@ -26,7 +26,7 @@ const Schedule = () => {
           top:"-30px",
           background:'#fff',
           padding:'10px',
-          width:'90px',
+          width:'280px',
           borderTopLeftRadius:'8px',
           borderTopRightRadius:'8px',
           boxShadow: '0 0 10px 0 #d2d7e0',
