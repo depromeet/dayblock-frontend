@@ -22,6 +22,14 @@ const Schedule = () => {
       if(!time){
         const style = {
           textAlign: "center",
+          position:"absolute",
+          top:"-30px",
+          background:'#fff',
+          padding:'10px',
+          width:'90px',
+          borderTopLeftRadius:'8px',
+          borderTopRightRadius:'8px',
+          boxShadow: '0 0 10px 0 #d2d7e0',
         }
         const today = new Date();
         const year  = today.getFullYear(); 
@@ -29,7 +37,7 @@ const Schedule = () => {
         const day  = `${today.getDate()}`.padStart(2, '0'); 
         return (
           <div key={index} style={style} className="schedule-date">
-              {`${year} - ${month} - ${day}`}
+              {`${year}-${month}-${day}`}
           </div>
         )
       }
