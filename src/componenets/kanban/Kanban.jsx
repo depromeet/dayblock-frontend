@@ -1,10 +1,9 @@
 import React, { useCallback, useState } from 'react';
-import ReactDOM from 'react-dom';
 import '@atlaskit/css-reset'
 import {DragDropContext} from 'react-beautiful-dnd';
 import styled from 'styled-components'
 
-import initialData from "../initial-data.js";
+import initialData from "./initial-data.js";
 import Column from '../component/Column.jsx'
 
 const Container = styled.div`

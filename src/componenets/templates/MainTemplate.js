@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import "../../interceptor/headerInterceptor";
-import { Header, Nav } from "../layout";
+import "../../auth/headerInterceptor";
+import { Header, Nav } from "./layout/";
 
 const MainTemplate = (props) => {
   const isLogined = !!localStorage.getItem("token");

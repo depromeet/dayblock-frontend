@@ -1,7 +1,7 @@
 import React , { useState, useEffect } from "react";
 import Axios from "axios";
 import { SERVER_URL, UserInfo } from "../molecules";
-import "../../interceptor/headerInterceptor";
+import "../../auth/headerInterceptor";
 import "./header.css";
 
 const Header = () => {

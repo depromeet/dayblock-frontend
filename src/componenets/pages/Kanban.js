@@ -1,6 +1,6 @@
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate';
-import KanbanSchedule from '../KanbanSchedule';
+import KanbanSchedule from '../kanbanSchedule/KanbanSchedule';
 
 const Kanban = () => {
     return (
