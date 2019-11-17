@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { LoginModal } from "../molecules";
 import "../../resources/sass/login/Login.scss";
-import {Header } from "../layout";
+import {Header } from "../templates/layout";
 
 const Login = () => {
   const isLogined = !!localStorage.getItem("token");

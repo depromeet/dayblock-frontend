@@ -1,7 +1,7 @@
 import React from 'react';
 import './KanbanSchedule.css';
 import Schedule from './Schedule';
-import Kanban from './component/Kanban';
+import Kanban from '../kanban/Kanban';
 
 const KanbanSchedule = () => {
     return (

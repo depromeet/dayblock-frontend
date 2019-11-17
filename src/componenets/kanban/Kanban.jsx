@@ -4,7 +4,7 @@ import {DragDropContext} from 'react-beautiful-dnd';
 import styled from 'styled-components'
 
 import initialData from "./initial-data.js";
-import Column from '../component/Column.jsx'
+import Column from './Column.jsx'
 
 const Container = styled.div`
   display: flex;

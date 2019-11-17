@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import home from"../../resources/images/nav/home.svg"
-import schedule from"../../resources/images/nav/schedule.svg"
-import kanban from"../../resources/images/nav/kanban.svg"
-import report from"../../resources/images/nav/report.svg"
-import settings from"../../resources/images/nav/settings.svg"
+import home from "../../../resources/images/nav/home.svg"
+import schedule from "../../../resources/images/nav/schedule.svg"
+import kanban from "../../../resources/images/nav/kanban.svg"
+import report from "../../../resources/images/nav/report.svg"
+import settings from "../../../resources/images/nav/settings.svg"
 import "./nav.css";
 
 const Nav = () => {
