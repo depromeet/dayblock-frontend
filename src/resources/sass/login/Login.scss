@@ -29,11 +29,16 @@ li {
   li {
     width: calc(100% / 4);
     height: 100%;
+    margin-top: 0;
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
-        background: url("../../images/login/intro#{$i}.png") no-repeat center center;
-        background-size: cover;
+        background: url("../../images/login/intro#{$i}.png")
+          no-repeat
+          center
+          center;
+        background-size: contain;
+        background-color: #000000;
       }
       .box-#{$i} {
         width: 2em * $i;
