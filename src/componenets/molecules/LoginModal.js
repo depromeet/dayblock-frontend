@@ -14,11 +14,11 @@ const LoginModal = props => {
     setVisible(false);
   };
 
-  const onkeypressEnter = (e) => {
-    if(e.key === 'Enter'){
-     login();
+  const onkeypressEnter = e => {
+    if (e.key === "Enter") {
+      login();
     }
-  }
+  };
   const login = () => {
     console.log(email, password);
     Axios({

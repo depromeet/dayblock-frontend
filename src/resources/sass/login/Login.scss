@@ -10,10 +10,7 @@ html,
   padding: 0;
   font-family: Roboto;
 }
-ul,
-li {
-  list-style: none;
-}
+
 .slide {
   height: calc(100% - 68px);
   overflow: hidden;
@@ -30,7 +27,7 @@ li {
     width: calc(100% / 4);
     height: 100%;
     margin-top: 0;
-
+    list-style: none;
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
         background: url("../../images/login/intro#{$i}.png")

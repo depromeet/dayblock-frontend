@@ -1,17 +1,52 @@
-header, body, #root {
-    height: 100%;
+header,
+body,
+#root {
+  height: 100%;
 }
 main {
-    background: #f0f1f6;
-    height: calc(100% - 68px);
-    overflow-y: auto;
+  background: #f0f1f6;
+  height: calc(100% - 68px);
+  overflow-y: auto;
 }
-ul{padding:0;margin:0}
-li {list-style: none;padding:0}
-*{box-sizing:border-box}
-body{margin:0;font-size: 12px;line-height: 16px;font-family:'Roboto',NanumSquare,NanumBarungothic}
-h1{font-size: 24px;line-height: 32px;font-weight: bold}
-h2{font-size: 20px;line-height: 26px;font-weight: bold} 
-.title {font-size: 20px;line-height: 26px;font-weight: bold}
-.sub-title{font-size: 14px;line-height: 20px}
-.text{font-size: 11px;line-height: 14px}
+/* ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  padding: 0;
+} */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Roboto", NanumSquare, NanumBarungothic;
+}
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+h2 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+.title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+}
+.sub-title {
+  font-size: 14px;
+  line-height: 20px;
+}
+.text {
+  font-size: 11px;
+  line-height: 14px;
+}
