@@ -1,13 +1,11 @@
 import React from "react";
 
-const BlockTags = () => {
-  return (
-    <ul className=".title">
-      <li className=".title">tag1</li>
-      <li>tag2</li>
-      <li>tag3</li>
-    </ul>
-  );
+const BlockTags = props => {
+  const { blockTags } = props;
+  const lis = blockTags.map(t => {
+    return <li key={t}>t</li>;
+  });
+  return <ul className="block-tags">{lis}</ul>;
 };
 
 export default BlockTags;

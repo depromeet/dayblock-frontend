@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Block.scss";
-import { BlockTags } from "../molecules";
-import BlockProgress from "./BlockProgress";
+import Block from "./Block";
 
 const Blocks = () => {
-  const percentage = 80;
-  const createDate = "19.11.28";
-  return (
-    <div className="home-block">
-      <div className="block-img"></div>
-      <h2>dsdsaddsa</h2>
-      <BlockTags />
-      <BlockProgress percentage={percentage} />
-      <p className="create-date">{createDate}</p>
-    </div>
-  );
+  const [blocks, setBlocks] = useState([
+    {
+      blockTitle: "분류1",
+      percentage: 81,
+      createDate: "19.11.28",
+      blockTags: ["A", "d"]
+    },
+    {
+      blockTitle: "분류2",
+      percentage: 60,
+      createDate: "19.11.28",
+      blockTags: []
+    },
+    {
+      blockTitle: "분류3",
+      percentage: 0,
+      createDate: "19.11.28",
+      blockTags: []
+    }
+  ]);
+  const blockContainers = blocks.map((b, idx) => {
+    let isMain = false;
+    if (idx === 0) {
+      isMain = true;
+    }
+    return <Block key={idx} isMain={isMain} data={b} />;
+  });
+  return <div className="blocks-div">{blockContainers}</div>;
 };
 
 export default Blocks;

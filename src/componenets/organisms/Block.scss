@@ -1,5 +1,18 @@
 $main-block-font-color: #ffffff;
 
+.block-add-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+  border: none;
+  border-radius: 36px;
+  color: white;
+  font-size: 38px;
+}
 .blocks-div {
   display: flex;
   flex-wrap: wrap;
@@ -9,8 +22,7 @@ $main-block-font-color: #ffffff;
   position: relative;
   width: 280px;
   height: 320px;
-  margin-right: 24px;
-  margin-bottom: 24px;
+  margin: 16px 24px 24px 0;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px 0 #d2d7e0;
@@ -20,11 +32,26 @@ $main-block-font-color: #ffffff;
     padding-top: 20px;
   }
 
+  .flex-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   .block-img {
     width: 48px;
     height: 48px;
     border-radius: 6px;
     background-color: #000000;
+  }
+  .block-more {
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    mask: url(../../resources/images/home/more.svg) no-repeat center;
+  }
+  .block-tags {
+    height: 70px;
   }
 
   .progress-div {
@@ -53,6 +80,7 @@ $main-block-font-color: #ffffff;
     position: absolute;
     bottom: 20px;
     width: 65px;
+    color: #000000;
     line-height: 32px;
     border-radius: 4px;
     background-color: #ffffff;
@@ -69,6 +97,9 @@ $main-block-font-color: #ffffff;
     }
     .progress-value {
       background-color: $main-block-font-color;
+    }
+    .block-more {
+      background-color: white;
     }
   }
 }
