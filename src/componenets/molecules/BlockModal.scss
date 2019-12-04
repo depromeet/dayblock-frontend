@@ -1,0 +1,54 @@
+@import "./Modal.scss";
+
+.Modal-overlay {
+  @include overlay(rgba(45, 58, 93, 0.15));
+}
+.Modal {
+  @include modal(304px, 8px);
+
+  .block-img {
+    $size: 80px;
+    width: $size;
+    height: $size;
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color: #000000;
+    line-height: $size;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    color: white;
+  }
+
+  .button-group {
+    display: flex;
+    button {
+      border-radius: 0;
+      background-color: #fff;
+      color: #000000;
+      border: 1px solid #000000;
+      &.left {
+        border-radius: 5px 0 0 5px;
+      }
+      &.right {
+        border-radius: 0 5px 5px 0;
+      }
+      &.selected {
+        background-color: #000000;
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  0% {
+    opacity: 0.5;
+    top: 52%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}

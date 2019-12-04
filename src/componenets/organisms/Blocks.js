@@ -17,7 +17,7 @@ const Blocks = () => {
       blockTags: []
     },
     {
-      blockTitle: "분류3",
+      blockTitle: "Test",
       percentage: 0,
       createDate: "19.11.28",
       blockTags: []

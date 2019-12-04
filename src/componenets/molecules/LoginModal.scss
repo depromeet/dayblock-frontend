@@ -1,0 +1,29 @@
+@import "./Modal.scss";
+
+.Modal-overlay {
+  @include overlay(rgba(0, 0, 0, 0.89));
+}
+.Modal {
+  @include modal(304px);
+
+  h2.title {
+    text-align: left;
+    margin: 22px 0;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 900;
+    color: black;
+  }
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  0% {
+    opacity: 0.5;
+    top: 52%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}

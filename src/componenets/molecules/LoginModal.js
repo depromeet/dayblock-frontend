@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
-import "../../resources/sass/login/LoginModal.scss";
+import "./LoginModal.scss";
 import mainLogo from "../../resources/images/main-logo.png";
 import { SERVER_URL } from ".";
 

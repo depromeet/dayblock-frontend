@@ -1,7 +1,6 @@
 import React from "react";
 import { BlockTags } from "../molecules";
 import BlockProgress from "./BlockProgress";
-import more from "../../resources/images/home/more.svg";
 
 const Block = props => {
   const { isMain } = props;
@@ -9,7 +8,7 @@ const Block = props => {
   return (
     <div className={`home-block ${isMain ? "main-block" : ""}`}>
       <div className="flex-start">
-        <div className="block-img"></div>
+        <div className="block-img">{blockTitle.charAt(0)}</div>
         <div className="block-more" />
       </div>
       <h2>{blockTitle}</h2>
