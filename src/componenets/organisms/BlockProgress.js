@@ -2,7 +2,7 @@ import React from "react";
 import { BlockProgressBar } from "../molecules";
 
 const BlockProgress = props => {
-  const { percentage } = props;
+  const { percentage = 0 } = props;
   return (
     <div className="progress-div" style={{ width: "240px" }}>
       <span name="v" style={{ marginLeft: `calc(${percentage}%)` }}>
