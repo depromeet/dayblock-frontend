@@ -1,17 +1,21 @@
 import React, { useState, useCallback } from "react";
 import "./BlockModal.scss";
 
-const defaultBlock = {
-  blockTitle: "",
-  blockTags: new Array(3).fill(null)
-};
-
 const BlockModal = props => {
-  const { setVisible, addBlock, data } = props;
+  const { setVisible, saveCallback, data } = props;
   const modalClose = () => {
     setVisible(false);
   };
-  const [block, setBlock] = useState(data ? data : defaultBlock);
+  const [block, setBlock] = useState(
+    data
+      ? data
+      : {
+          blockTitle: "",
+          blockTags: [],
+          createDate: null
+        }
+  );
+
   const onTitileChange = useCallback(
     e => {
       const title = e.target.value;
@@ -38,20 +42,27 @@ const BlockModal = props => {
       document.getElementById("alert_block_title").style.display = "";
       return;
     }
-    //TODO: 데이터 넘기기 전에 tags 빈값 필터
-    addBlock(block);
+
+    if (!block.createDate) {
+      const now = new Date();
+      block.createDate = `${now
+        .getFullYear()
+        .toString()
+        .substr(2)}.${now.getMonth() + 1}.${now.getDate()}`; // 서버에서 create date 넣어줘야 함...
+    }
+    saveCallback(block);
     modalClose();
   };
-
-  const tags = block.blockTags.map((t, idx) => {
+  const tags = new Array(3).fill(null).map((t, idx) => {
+    const tag = block.blockTags[idx] ? block.blockTags[idx] : null;
     return (
       <input
         type="text"
         key={idx}
         idx={idx}
-        defaultValue={t}
+        defaultValue={tag}
         onChange={onTagChange}
-      ></input>
+      />
     );
   });
   return (
